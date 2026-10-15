@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  font-family: 'Space Mono', monospace;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+
+  --color-background: #f7f4eb;
+  --color-text: #111111;
+  --color-accent: #d7ff00;
+  --color-accent-soft: rgba(215, 255, 0, 0.24);
+  --color-accent-bright: #d7ff00;
+
+  --paper: var(--color-background);
+  --ink: var(--color-text);
+  --muted: #676860;
+  --lime: var(--color-accent);
+  --line: rgba(18, 18, 18, 0.15);
+  --display: 'Outfit', sans-serif;
+  --mono: 'Space Mono', monospace;
+  --script: 'Caveat', cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+body,
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

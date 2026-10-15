@@ -1,0 +1,115 @@
+.hero-background {
+  position: absolute;
+  z-index: 0;
+  inset: -90px 0 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-section .hero-background__blob {
+  position: absolute;
+  bottom: -12vw;
+  left: -9vw;
+  width: 26vw;
+  aspect-ratio: 1;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-section .hero-background__blob-copy {
+  fill: var(--color-text, #111111);
+  font-family: var(--mono, 'Space Mono', monospace);
+  font-size: 11px;
+  letter-spacing: 5px;
+}
+
+.hero-background__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-background__path,
+.hero-background__arrowhead {
+  fill: none;
+  stroke: var(--color-accent, #d7ff00);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-background__path {
+  stroke-width: 1.35;
+  vector-effect: non-scaling-stroke;
+}
+
+.hero-background__path--clean,
+.hero-background__path--useful {
+  stroke-width: 1.3;
+}
+
+.hero-background__arrowhead {
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.hero-background__ornament {
+  fill: none;
+  stroke: var(--color-accent, #d7ff00);
+  stroke-linecap: round;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.hero-background__asterisk {
+  fill: none;
+  stroke: var(--color-text, #111111);
+  stroke-linecap: round;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.hero-background__moving-dot {
+  fill: var(--color-accent, #d7ff00);
+  filter: drop-shadow(0 0 3px rgba(215, 255, 0, 0.45));
+  opacity: 0;
+}
+
+.hero-background__labels {
+  fill: var(--color-text, #111111);
+  font-family: var(--script, 'Caveat', cursive);
+  font-size: 22px;
+}
+
+.hero-background__label circle {
+  fill: var(--color-accent, #d7ff00);
+}
+
+.hero-background__label path {
+  fill: none;
+  stroke: rgba(17, 17, 17, 0.58);
+  stroke-width: 1;
+}
+
+.hero-background__label:last-child circle {
+  filter: drop-shadow(0 0 5px rgba(215, 255, 0, 0.38));
+}
+
+@media (max-width: 700px) {
+  .hero-background {
+    inset: -76px 0 0;
+  }
+
+  .hero-background__path--clean,
+  .hero-background__path--useful,
+  .hero-background__labels,
+  .hero-background__moving-dot,
+  .hero-background__asterisk {
+    display: none;
+  }
+
+  .hero-background__path--main {
+    opacity: 0.72;
+  }
+}
