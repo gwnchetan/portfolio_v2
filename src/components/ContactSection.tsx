@@ -205,7 +205,7 @@ function ContactSection() {
       </section>
 
       <footer className="site-footer">
-        <div className="site-footer-inner">
+        <div className="section-container site-footer-inner">
           <div className="site-footer-about">
             <div className="site-footer-brand"><i />CHETAN</div>
             <p>A BG graduate and a developer who loves turning<br />ideas into real and useful products.</p>

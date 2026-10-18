@@ -4,9 +4,9 @@ import { portfolioStats } from '../../data/stats'
 import './QuickLookCard.scss'
 
 const quickLookStats = [
-  { id: 'projects', value: portfolioStats.majorProjects, label: <>Projects<br />Built</> },
-  { id: 'stacks', value: '3+', label: <>Tech<br />Stacks</> },
-  { id: 'learning', value: portfolioStats.yearsLearning, label: <>Years<br />Learning</> },
+  { id: 'projects', value: `${portfolioStats.projectsBuilt}+`, label: <>Projects<br />Built</> },
+  { id: 'stacks', value: `${portfolioStats.techStacks}+`, label: <>Tech<br />Stacks</> },
+  { id: 'learning', value: `${portfolioStats.yearsLearning}+`, label: <>Years<br />Learning</> },
   { id: 'curiosity', value: 'infinity', label: <>Curiosity<br />Always</> },
 ]
 

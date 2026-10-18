@@ -1,6 +1,10 @@
-import { projects } from './projects'
+// REPLACE WITH TRUE VALUES
+export const projectsBuilt = 3
+export const techStacks = 3
+export const yearsLearning = 2
 
 export const portfolioStats = {
-  majorProjects: `${projects.length}+`,
-  yearsLearning: '2+',
+  projectsBuilt,
+  techStacks,
+  yearsLearning,
 } as const

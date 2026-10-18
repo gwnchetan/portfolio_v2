@@ -109,14 +109,14 @@ function SkillsSection() {
               </svg>
             </div>
             <div className="skills-summary__stat">
-              <strong>{portfolioStats.majorProjects}</strong>
+              <strong>{portfolioStats.projectsBuilt}+</strong>
               <span>Major Projects<br />Built</span>
               <svg className="skills-summary__spark" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 2v8m0 4v8M2 12h8m4 0h8" />
               </svg>
             </div>
             <div className="skills-summary__stat">
-              <strong>{portfolioStats.yearsLearning}</strong>
+              <strong>{portfolioStats.yearsLearning}+</strong>
               <span>Years<br />Learning &amp; Building</span>
               <svg className="skills-summary__spark" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 2v8m0 4v8M2 12h8m4 0h8" />

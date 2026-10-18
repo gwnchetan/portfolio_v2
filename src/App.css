@@ -1,5 +1,4 @@
 .portfolio-page {
-  min-height: 100svh;
   overflow-x: clip;
 }
 
@@ -12,19 +11,17 @@
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: max(500px, calc(100svh - 92px));
   align-items: center;
   overflow: visible;
-  padding: 26px clamp(28px, 6vw, 96px) 54px;
+  padding-block: var(--section-space);
+  padding-inline: 0;
+  padding-block-start: clamp(3rem, 5vw, 5rem);
   isolation: isolate;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  width: min(100%, 660px);
-  top: 2px;
-  padding-bottom: 10px;
   animation: hero-content-in 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -84,7 +81,7 @@
 }
 
 .hero-kicker {
-  margin: 18px 0 0 8vw;
+  margin: 18px 0 0;
   color: var(--ink);
   font-family: var(--mono);
   font-size: var(--fs-kicker);
@@ -94,7 +91,7 @@
 
 .hero-content .hero-description {
   max-width: 580px;
-  margin: 10px 0 0 8vw;
+  margin: 10px 0 0;
   color: var(--muted);
   font-family: var(--mono);
   font-size: var(--fs-body);
@@ -105,7 +102,7 @@
   display: flex;
   align-items: center;
   gap: 28px;
-  margin: 0 0 0 8vw;
+  margin: 0;
 }
 
 .hero-cta {
@@ -171,7 +168,7 @@
 .hero-index {
   position: absolute;
   z-index: 1;
-  right: clamp(28px, 3.8vw, 60px);
+  right: max(var(--gutter), calc((100% - 100rem) / 2));
   bottom: 16px;
   display: flex;
   align-items: center;
@@ -245,14 +242,6 @@
 }
 
 @media (min-width: 1024px) {
-  .hero-section {
-    padding-left: 10.5vw;
-  }
-
-  .hero-content {
-    width: min(100%, 900px);
-  }
-
   .hero-kicker {
     margin-top: 20px;
   }
@@ -279,14 +268,7 @@
 
 @media (max-width: 700px) {
   .hero-section {
-    min-height: max(520px, calc(100svh - 76px));
-    padding: 20px 7vw 66px;
-  }
-
-  .hero-content {
-    width: 100%;
-    top: 0;
-    padding-bottom: 0;
+    padding-block-start: clamp(3rem, 9vw, 4.5rem);
   }
 
   .hero-title-lockup {
@@ -310,12 +292,6 @@
   .hero-sparkles {
     right: -12%;
     width: 10%;
-  }
-
-  .hero-kicker,
-  .hero-content .hero-description,
-  .hero-actions {
-    margin-left: 4%;
   }
 
   .hero-kicker {
@@ -348,8 +324,7 @@
   }
 
   .hero-index {
-    right: 7vw;
-    bottom: 18px;
+    bottom: var(--section-space);
     gap: 10px;
     font-size: 9px;
   }

@@ -1,7 +1,7 @@
 .projects-section {
   position: relative;
   overflow-x: clip;
-  padding-block: clamp(3rem, 6vw, 6rem) clamp(4rem, 8vw, 8rem);
+  padding-block: var(--section-space);
   color: var(--ink);
 }
 

@@ -65,7 +65,7 @@ function App() {
       <main className="portfolio-main">
         <section className="hero-section" id="home">
           <HeroBackground />
-          <div className="hero-content">
+          <div className="hero-content section-container">
             <div className="hero-title-lockup">
               <p className="hero-script">Hi, I’m</p>
               <h1 className="hero-name">Chetan</h1>
