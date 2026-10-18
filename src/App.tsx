@@ -1,10 +1,64 @@
+import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import './App.css'
 import HeroBackground from './components/HeroBackground'
-
-
+import AboutSection from './components/about/AboutSection'
+import SkillsSection from './components/skills/SkillsSection'
+import ProjectsSection from './components/projects/ProjectsSection'
+import ContactSection from './components/ContactSection'
 
 function App() {
+  useEffect(() => {
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !('IntersectionObserver' in window)
+    ) {
+      return
+    }
+
+    const revealGroups = [
+      '.about-heading, .about-intro-area, .about-quicklook-wrap, .about-pillars, .about-beyond',
+      '.projects-header, .projects-card',
+      '.skills-header, .skill-card, .skills-summary',
+      '.contact-info, .contact-form, .site-footer-inner > *',
+    ]
+    const elements = revealGroups.flatMap((selector) =>
+      [...document.querySelectorAll<HTMLElement>(selector)],
+    )
+
+    if (elements.length === 0) return
+
+    document.documentElement.classList.add('has-scroll-reveal')
+    revealGroups.forEach((selector) => {
+      document.querySelectorAll<HTMLElement>(selector).forEach((element, index) => {
+        element.classList.add('scroll-reveal')
+        element.style.setProperty('--reveal-delay', `${Math.min(index, 3) * 75}ms`)
+      })
+    })
+
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          entry.target.classList.add('is-visible')
+          currentObserver.unobserve(entry.target)
+        })
+      },
+      { threshold: 0.12 },
+    )
+
+    elements.forEach((element) => observer.observe(element))
+
+    return () => {
+      observer.disconnect()
+      document.documentElement.classList.remove('has-scroll-reveal')
+      elements.forEach((element) => {
+        element.classList.remove('scroll-reveal', 'is-visible')
+        element.style.removeProperty('--reveal-delay')
+      })
+    }
+  }, [])
+
   return (
     <div className="portfolio-page">
       <Navbar />
@@ -53,6 +107,10 @@ function App() {
             <span>PORTFOLIO 2026</span>
           </div>
         </section>
+        <AboutSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <ContactSection />
       </main>
     </div>
   )

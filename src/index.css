@@ -25,20 +25,65 @@
   --display: 'Outfit', sans-serif;
   --mono: 'Space Mono', monospace;
   --script: 'Caveat', cursive;
+
+  --fs-label: clamp(10px, 0.63vw, 12px);
+  --fs-ui: clamp(11px, 1.2vw, 12px);
+  --fs-card: clamp(12px, 0.79vw, 15px);
+  --fs-body: clamp(11px, 1vw, 17px);
+  --fs-kicker: clamp(12px, 1.3vw, 22px);
+  --fs-lead: clamp(18px, 1.48vw, 28px);
+
+  --fs-about-display: clamp(4.4rem, 7.4vw, 8.8rem);
+  --fs-about-script: clamp(5.8rem, 8.2vw, 10rem);
+  --fs-handwriting: clamp(1.25rem, 1.8vw, 2rem);
+  --fs-card-note: clamp(1.25rem, 1.7vw, 1.9rem);
+  --fs-sticky-note: clamp(1.1rem, 1.55vw, 1.65rem);
+  --fs-stat: clamp(1.75rem, 2.5vw, 2.8rem);
+  --fs-stat-label: clamp(9px, 0.8vw, 12px);
+  --fs-pillar-title: clamp(0.88rem, 1.35vw, 1.2rem);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --fs-about-display: clamp(5rem, 14vw, 8rem);
+    --fs-about-script: clamp(6rem, 16vw, 9.5rem);
+    --fs-lead: clamp(1.2rem, 4vw, 1.8rem);
+    --fs-body: clamp(0.72rem, 2vw, 0.9rem);
+    --fs-card: 0.75rem;
+    --fs-pillar-title: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --fs-label: 9px;
+    --fs-ui: clamp(9px, 2.5vw, 10px);
+    --fs-about-display: clamp(4.7rem, 19vw, 6.5rem);
+    --fs-about-script: clamp(5.8rem, 21vw, 7.5rem);
+    --fs-lead: clamp(1.05rem, 5vw, 1.35rem);
+    --fs-body: 0.7rem;
+    --fs-stat-label: 9px;
+  }
 }
 
 * {
   box-sizing: border-box;
 }
 
+.section-container {
+  --gutter: clamp(1.5rem, 5vw, 6rem);
+  width: min(100rem, calc(100% - var(--gutter) - var(--gutter)));
+  margin-inline: auto;
+}
+
 html {
-  min-width: 320px;
+  min-width: 0;
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
 
 body {
-  min-width: 320px;
+  min-width: 0;
   margin: 0;
 }
 

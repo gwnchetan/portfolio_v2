@@ -1,5 +1,6 @@
 import { useEffect, useId, useState } from 'react'
-import logo from '../assets/noobdev-logo.png'
+import logo from '../assets/noobdev-logo.webp'
+import useNavbarVisibility from '../hooks/useNavbarVisibility'
 import './Navbar.css'
 
 export type NavbarVariant = 'full' | 'minimal'
@@ -51,6 +52,7 @@ function ContactLink({ onClick }: { onClick: () => void }) {
 }
 
 export default function Navbar({ variant = 'full' }: NavbarProps) {
+  const visible = useNavbarVisibility()
   const [isCompact, setIsCompact] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeItem, setActiveItem] = useState('#home')
@@ -110,7 +112,9 @@ export default function Navbar({ variant = 'full' }: NavbarProps) {
   }
 
   return (
-    <header className={`noobdev-navbar-shell variant-${variant}${isCompact ? ' is-compact' : ''}`}>
+    <header
+      className={`noobdev-navbar-shell variant-${variant}${isCompact ? ' is-compact' : ''}${!visible && !isMenuOpen ? ' navbar--hidden' : ''}`}
+    >
       <div className="noobdev-navbar">
         <a className="noobdev-brand" href="#home" onClick={() => selectItem('#home')} aria-label="Noobdev.Art by Chetan">
           <img className="noobdev-logo" src={logo} alt="Noobdev.Art — Chetan" />

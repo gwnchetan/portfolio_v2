@@ -12,7 +12,17 @@
   width: min(96vw, 1220px);
   margin: 18px auto 0;
   color: var(--navbar-ink);
-  transition: width 260ms ease;
+  transition:
+    width 260ms ease,
+    translate 0.35s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.noobdev-navbar-shell.navbar--hidden {
+  translate: 0 -140%;
+}
+
+.noobdev-navbar-shell.navbar--hidden:focus-within {
+  translate: 0 0;
 }
 
 .noobdev-navbar {
@@ -496,6 +506,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .noobdev-navbar-shell {
+    transition: none;
+  }
+
   .noobdev-navbar-shell *,
   .noobdev-navbar-shell *::before,
   .noobdev-navbar-shell *::after {
